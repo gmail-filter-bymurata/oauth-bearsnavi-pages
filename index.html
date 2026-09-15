@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CA面談インテリジェンス — サービス概要</title>
+<meta name="description" content="ベアーズナビ株式会社の社内業務ツール「CA面談インテリジェンス」の概要です。">
+<style>
+    :root{--bg:#f7f8fa;--surface:#fff;--fg:#16181d;--muted:#5c6370;--border:#e5e7eb;--accent:#1f6feb}
+    @media (prefers-color-scheme:dark){:root{--bg:#0e1014;--surface:#171a20;--fg:#e8eaed;--muted:#9aa3ae;--border:#2a2f38;--accent:#4c8dff}}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--fg);line-height:1.85;
+      font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP","Yu Gothic",Meiryo,sans-serif}
+    .wrap{max-width:760px;margin:0 auto;padding:32px 20px 80px}
+    header{border-bottom:1px solid var(--border);padding-bottom:16px;margin-bottom:32px}
+    .brand{font-size:14px;font-weight:700;letter-spacing:.02em}
+    .org{font-size:12px;color:var(--muted);margin-top:2px}
+    h1{font-size:22px;margin:0 0 8px}
+    h2{font-size:16px;margin:36px 0 10px;padding-top:20px;border-top:1px solid var(--border)}
+    h2:first-of-type{border-top:0;padding-top:0}
+    h3{font-size:14px;margin:22px 0 6px}
+    p,li{font-size:14px}
+    ul{padding-left:1.3em}
+    li{margin:4px 0}
+    a{color:var(--accent)}
+    .updated{font-size:12px;color:var(--muted)}
+    .card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 18px;margin:16px 0}
+    .note{font-size:13px;color:var(--muted)}
+    table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px}
+    th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top}
+    th{background:var(--bg);font-weight:600;white-space:nowrap}
+    code{background:var(--bg);border:1px solid var(--border);border-radius:4px;padding:1px 5px;font-size:12px;
+      word-break:break-all}
+    nav.foot{margin-top:48px;padding-top:20px;border-top:1px solid var(--border);font-size:13px}
+    nav.foot a{margin-right:16px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="brand">CA面談インテリジェンス</div>
+  <div class="org">ベアーズナビ株式会社 社内業務ツール</div>
+</header>
+
+<h1>サービス概要</h1>
+<p class="updated">最終更新: 2026年9月14日</p>
+
+<div class="card">
+  <p style="margin:0">
+    <strong>本ツールは一般の求職者向けサービスではありません。</strong>
+    ベアーズナビ株式会社の社内業務ツールであり、当社が許可した社内アカウントのみが利用できます。
+    一般の方が登録・利用することはできません。
+  </p>
+</div>
+
+<h2>何をするツールか</h2>
+<p>
+  当社のキャリアアドバイザー（以下「CA」）が求職者と行った面談について、
+  <strong>記録の整理・振り返り・CAの教育</strong>を目的に使う社内ツールです。
+</p>
+<ul>
+  <li>面談ごとの記録（日時・担当CA・関連ファイルへのリンク）を一覧できるようにする</li>
+  <li>会議メモを構造化し、面談で何が話され、どのような支援が行われたかを振り返れるようにする</li>
+  <li>他のCAが学べる面談を、管理者が「教育ライブラリ」として認定・共有する</li>
+</ul>
+<p class="note">
+  求職者への提案内容の自動生成や、求職者の評価・スコアリングを目的としたツールではありません。
+  評価の対象は当社CAの面談技術です。
+</p>
+
+<h2>Google アカウントとの連携</h2>
+<p>
+  当社CAがGoogle Meetで実施した面談の録画と、Googleが自動生成した会議メモは、
+  各CAのGoogleドライブに保存されます。本ツールはこれを参照するために、
+  <strong>CA本人の同意のもと、読み取り専用の権限</strong>でGoogleアカウントと連携します。
+</p>
+
+<table>
+  <tr><th>使うAPI</th><th>目的</th><th>権限</th></tr>
+  <tr>
+    <td>Google Drive API</td>
+    <td>Google Meet が作成した録画・会議メモのファイル情報（ファイル名・作成日時・閲覧リンク）を取得する</td>
+    <td>読み取りのみ</td>
+  </tr>
+  <tr>
+    <td>Google Docs API</td>
+    <td>会議メモ（Googleドキュメント）の本文を取得する</td>
+    <td>読み取りのみ</td>
+  </tr>
+</table>
+
+<ul>
+  <li><strong>ファイルの作成・変更・削除・移動は一切行いません。</strong>
+      その処理をコードとして実装しておらず、Google APIへ送信できるHTTPメソッドも
+      プログラム上で読み取り系に限定しています。</li>
+  <li><strong>録画（動画・音声）の実体はダウンロードも保存もしません。</strong>
+      Googleドライブ上の原本へのリンクのみを保持します。</li>
+  <li>Googleのパスワードを入力・保存することはありません（OAuth 2.0 を使用します）。</li>
+</ul>
+
+<h2>取り扱う情報</h2>
+<p>
+  会議メモには求職者の氏名などが含まれることがあります。本ツールでは、
+  <strong>氏名・メールアドレス・電話番号・住所・URLを匿名化した状態で保存</strong>し、
+  マスキング前の原文は保存しません。
+</p>
+<p>
+  取得する情報の詳細、利用目的、保存しない情報、削除の方法は
+  <a href="privacy/">プライバシーポリシー</a>に記載しています。
+</p>
+
+<h2>提供者</h2>
+<table>
+  <tr><th>提供者</th><td>ベアーズナビ株式会社</td></tr>
+  <tr><th>ツール名</th><td>CA面談インテリジェンス</td></tr>
+  <tr><th>利用対象</th><td>当社が許可した社内アカウントのみ</td></tr>
+  <tr><th>お問い合わせ</th><td><a href="mailto:k.murata@bearsnavi.com">k.murata@bearsnavi.com</a></td></tr>
+</table>
+
+<nav class="foot">
+  <a href="privacy/">プライバシーポリシー</a>
+  <a href="terms/">利用規約</a>
+  <a href="https://gmail-filter-bymurata.github.io/ca-meeting-pages/">ツールを開く（要ログイン）</a>
+</nav>
+</div>
+</body>
+</html>

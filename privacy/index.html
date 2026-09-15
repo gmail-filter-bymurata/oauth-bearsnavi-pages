@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CA面談インテリジェンス — プライバシーポリシー</title>
+<meta name="description" content="CA面談インテリジェンスが取得するGoogleユーザーデータの取り扱いについて。">
+<style>
+    :root{--bg:#f7f8fa;--surface:#fff;--fg:#16181d;--muted:#5c6370;--border:#e5e7eb;--accent:#1f6feb}
+    @media (prefers-color-scheme:dark){:root{--bg:#0e1014;--surface:#171a20;--fg:#e8eaed;--muted:#9aa3ae;--border:#2a2f38;--accent:#4c8dff}}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--fg);line-height:1.85;
+      font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP","Yu Gothic",Meiryo,sans-serif}
+    .wrap{max-width:760px;margin:0 auto;padding:32px 20px 80px}
+    header{border-bottom:1px solid var(--border);padding-bottom:16px;margin-bottom:32px}
+    .brand{font-size:14px;font-weight:700;letter-spacing:.02em}
+    .org{font-size:12px;color:var(--muted);margin-top:2px}
+    h1{font-size:22px;margin:0 0 8px}
+    h2{font-size:16px;margin:36px 0 10px;padding-top:20px;border-top:1px solid var(--border)}
+    h2:first-of-type{border-top:0;padding-top:0}
+    h3{font-size:14px;margin:22px 0 6px}
+    p,li{font-size:14px}
+    ul{padding-left:1.3em}
+    li{margin:4px 0}
+    a{color:var(--accent)}
+    .updated{font-size:12px;color:var(--muted)}
+    .card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 18px;margin:16px 0}
+    .note{font-size:13px;color:var(--muted)}
+    table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px}
+    th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top}
+    th{background:var(--bg);font-weight:600;white-space:nowrap}
+    code{background:var(--bg);border:1px solid var(--border);border-radius:4px;padding:1px 5px;font-size:12px;
+      word-break:break-all}
+    nav.foot{margin-top:48px;padding-top:20px;border-top:1px solid var(--border);font-size:13px}
+    nav.foot a{margin-right:16px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="brand">CA面談インテリジェンス</div>
+  <div class="org">ベアーズナビ株式会社 社内業務ツール</div>
+</header>
+
+<h1>プライバシーポリシー</h1>
+<p class="updated">最終更新: 2026年9月14日</p>
+
+<p>
+  本ポリシーは、ベアーズナビ株式会社（以下「当社」）が提供する社内業務ツール
+  「CA面談インテリジェンス」（以下「本ツール」）における情報の取り扱いを定めるものです。
+  本ツールの概要は<a href="../">サービス概要</a>をご覧ください。
+</p>
+
+<h2>1. 取得するGoogleユーザーデータ</h2>
+
+<h3>1-1. ログインのために取得する情報</h3>
+<p>本ツールへのログインにGoogleアカウントを使用します。取得するのは次の情報です。</p>
+<ul>
+  <li>メールアドレス</li>
+  <li>表示名・プロフィール画像（スコープ <code>openid</code> <code>email</code> <code>profile</code>）</li>
+</ul>
+
+<h3>1-2. 面談データの取得のために連携する権限</h3>
+<p>
+  当社CAが本人の意思でGoogleアカウントを接続した場合に限り、次の読み取り専用スコープを要求します。
+</p>
+<table>
+  <tr><th>スコープ</th><th>取得する内容</th></tr>
+  <tr>
+    <td><code>https://www.googleapis.com/auth/drive.meet.readonly</code></td>
+    <td>Google Meet が作成したファイル（録画・会議メモ）のファイル名、MIMEタイプ、サイズ、作成日時、更新日時、閲覧リンク、所有者のメールアドレス</td>
+  </tr>
+  <tr>
+    <td><code>https://www.googleapis.com/auth/documents.readonly</code></td>
+    <td>会議メモ（Googleドキュメント）の本文テキスト</td>
+  </tr>
+  <tr>
+    <td><code>openid</code> <code>email</code></td>
+    <td>接続したGoogleアカウントの識別子とメールアドレス</td>
+  </tr>
+</table>
+<p>
+  いずれも<strong>読み取り専用</strong>です。Googleドライブ上のファイルを作成・変更・削除・移動する機能は
+  本ツールに実装されていません。
+</p>
+
+<h2>2. 利用目的</h2>
+<ul>
+  <li>面談記録の整理と、担当CA本人および管理者による振り返り</li>
+  <li>会議メモの構造化（面談で何が話され、どのような支援が行われたかの記録）</li>
+  <li>他のCAの教育教材として活用できる面談の選定・共有</li>
+</ul>
+<p>
+  <strong>広告目的では使用しません。第三者へ販売・貸与しません。</strong>
+  求職者個人の信用評価や、当社以外への提供のために使用することもありません。
+</p>
+
+<h2>3. 保存する情報 / 保存しない情報</h2>
+
+<h3>3-1. 保存する情報</h3>
+<table>
+  <tr><th>区分</th><th>内容</th></tr>
+  <tr><td>面談</td><td>タイトル、開始日時、所要時間、担当CA、処理状態</td></tr>
+  <tr><td>ファイル情報</td><td>GoogleドライブのファイルID、ファイル名、MIMEタイプ、サイズ、<strong>閲覧リンク</strong>、作成／更新日時、所有者メールアドレス</td></tr>
+  <tr><td>会議メモ</td><td><strong>匿名化処理を施したテキストのみ</strong>。あわせて文字数、匿名化した項目の件数、原文のハッシュ値（更新検知用）</td></tr>
+  <tr><td>求職者</td><td>社内管理用の氏名、匿名ID、メールアドレス・電話番号の<strong>ハッシュ値のみ</strong></td></tr>
+  <tr><td>接続情報</td><td>接続したGoogleアカウントのメールアドレスと識別子、付与されたスコープ、<strong>暗号化した更新トークン</strong>（AES-256-GCM）</td></tr>
+  <tr><td>解析結果</td><td>面談の要約・評価、タグ、担当者のコメント、操作の監査ログ</td></tr>
+</table>
+
+<h3>3-2. 保存しない情報</h3>
+<ul>
+  <li><strong>録画（動画）・音声の実体</strong> — ダウンロードせず、Googleドライブ上の原本へのリンクのみを保持します</li>
+  <li><strong>会議メモの原文</strong> — 匿名化前のテキストはデータベースに保存しません</li>
+  <li><strong>求職者のメールアドレス・電話番号の生の値</strong> — ハッシュ値のみを保存します</li>
+  <li><strong>Googleのパスワード</strong> — 入力も保存も行いません</li>
+  <li><strong>アクセストークン</strong> — 必要の都度取得し、データベースには保存しません</li>
+</ul>
+
+<h3>3-3. 匿名化について</h3>
+<p>
+  会議メモは、氏名・メールアドレス・電話番号・住所・URLを
+  <code>[候補者]</code> <code>[CA]</code> <code>[EMAIL_1]</code> のようなトークンへ置換したうえで保存します。
+  ただし<strong>日本語の自由文から個人を特定しうる記述をすべて機械的に除去することはできません</strong>。
+  勤務先名・経歴など、氏名以外の記述が残る場合があります。本ツールはこれを前提に、
+  後述のアクセス制御と併せて保護しています。
+</p>
+
+<h2>4. 第三者提供・外部サービス</h2>
+<p>本ツールは次の外部サービスを基盤として利用します。いずれも本ツールの機能を提供する目的に限られます。</p>
+<table>
+  <tr><th>サービス</th><th>用途</th><th>渡る情報</th></tr>
+  <tr><td>Supabase</td><td>データベース、ログイン認証、サーバー処理</td><td>上記「保存する情報」</td></tr>
+  <tr><td>GitHub Pages</td><td>画面（静的ファイル）の配信</td><td>なし（画面のHTML/CSS/JSのみを配信）</td></tr>
+  <tr><td>Google API</td><td>面談データの取得元</td><td>—</td></tr>
+</table>
+
+<h3>4-1. AIによる解析について</h3>
+<p>
+  面談の構造化にはAIを利用します。取り扱いは次のとおりです。
+</p>
+<ul>
+  <li><strong>本ツールから外部のAI APIへ自動送信することはありません。</strong>
+      アプリケーションにAI APIを呼び出す機能は実装されていません。</li>
+  <li>解析は、当社の管理者が<strong>手動の操作として</strong>、
+      <strong>匿名化済みのテキストのみ</strong>をAI開発ツール（Anthropic社のClaude）で処理する運用としています。
+      匿名化前の原文、録画、ファイルそのものを渡すことはありません。</li>
+  <li>過去に実施した解析においても、送信したのは匿名化済みのテキストのみです。</li>
+</ul>
+<p>これら以外に、取得した情報を第三者へ提供・販売することはありません。</p>
+
+<h2>5. Google API Services User Data Policy への準拠</h2>
+<p>
+  本ツールによるGoogleユーザーデータの取得・利用・保存・共有は、
+  <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noreferrer noopener">Google API Services User Data Policy</a>
+  （Limited Use requirements を含む）に準拠します。具体的には次を遵守します。
+</p>
+<ul>
+  <li>取得したデータは、本ツールの機能を提供・改善する目的にのみ使用します</li>
+  <li>広告を目的としてデータを使用しません</li>
+  <li>データを第三者へ販売しません</li>
+  <li>データを人が読むのは、次の場合に限られます
+    <ul>
+      <li>データを提供したGoogleアカウント利用者（当社CA）の同意がある場合</li>
+      <li>セキュリティ上の目的（不正調査・障害対応）</li>
+      <li>法令の遵守に必要な場合</li>
+      <li>集計され匿名化されたデータであって、社内運用のために用いる場合</li>
+    </ul>
+  </li>
+</ul>
+<p class="note">
+  本ツールは、当社CAが自身の面談を振り返り、管理者が教育教材を選定するために、
+  匿名化済みの会議メモを社内担当者が閲覧することを前提としています。
+  これはアカウントを接続したCA本人の同意にもとづくものであり、接続時に説明しています。
+</p>
+
+<h2>6. アクセス制御と安全管理</h2>
+<ul>
+  <li><strong>招待制です。</strong>管理者が事前に登録したアカウントのみ利用できます。
+      Googleアカウントを持っているだけでは利用できません。</li>
+  <li>担当CAは自分の面談のみ閲覧できます。全件を閲覧できるのは管理者のみです。
+      他のCAが閲覧できるのは、管理者が教育教材として認定した面談に限られます。</li>
+  <li>データベースは行レベルセキュリティを既定で拒否に設定し、
+      加えて一般公開用のキーからはテーブルへの権限そのものを剥奪しています。
+      画面から直接データベースへ接続することはできません。</li>
+  <li>Googleの更新トークンはAES-256-GCMで暗号化して保存し、
+      画面・APIの応答・ログのいずれにも出力しません。</li>
+  <li>ログには個人情報・会議メモの本文・トークンを出力しません。</li>
+</ul>
+
+<h2>7. 保存期間</h2>
+<p>
+  面談記録および解析結果は、社内での振り返り・教育目的のために保存します。
+  求職者ご本人または当社CAからの削除のお申し出があった場合、
+  および社内で保存の必要がなくなったと判断した場合には削除します。
+</p>
+
+<h2>8. 連携の解除とデータの削除</h2>
+<h3>8-1. Googleアカウントの連携解除</h3>
+<ul>
+  <li>本ツールの「接続設定」画面から解除できます。解除するとGoogle側のトークンを失効させ、
+      当社に保存された暗号化トークンも消去します。</li>
+  <li>Googleアカウント側からも
+      <a href="https://myaccount.google.com/permissions" target="_blank" rel="noreferrer noopener">アカウントにアクセスできるアプリ</a>
+      からいつでも取り消せます。</li>
+</ul>
+<h3>8-2. データの削除・開示のご請求</h3>
+<p>
+  保存された情報の削除・開示をご希望の場合、また本ポリシーに関するお問い合わせは、
+  次の連絡先へご連絡ください。ご本人確認のうえ対応します。
+</p>
+<div class="card">
+  <p style="margin:0">
+    ベアーズナビ株式会社<br>
+    <a href="mailto:k.murata@bearsnavi.com">k.murata@bearsnavi.com</a>
+  </p>
+</div>
+
+<h2>9. 本ポリシーの変更</h2>
+<p>
+  本ポリシーの内容を変更する場合は、本ページを更新し、最終更新日を改めます。
+</p>
+
+<nav class="foot">
+  <a href="../">サービス概要</a>
+  <a href="../terms/">利用規約</a>
+  <a href="https://gmail-filter-bymurata.github.io/ca-meeting-pages/">ツールを開く（要ログイン）</a>
+</nav>
+</div>
+</body>
+</html>
